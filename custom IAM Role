@@ -1,0 +1,122 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "cloudwatch:PutMetricData",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "cloudwatch:namespace": "rdscustom/rds-custom-sqlserver-agent"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "ec2:CreateSnapshot",
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "ec2:CreateSnapshot",
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": "ec2:CreateTags",
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor4",
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogGroups",
+                "ec2messages:GetEndpoint",
+                "logs:DescribeLogStreams",
+                "ec2messages:AcknowledgeMessage",
+                "ec2messages:GetMessages",
+                "ssmmessages:OpenControlChannel",
+                "ssmmessages:CreateControlChannel",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents",
+                "ssmmessages:CreateDataChannel",
+                "ec2messages:DeleteMessage",
+                "logs:CreateLogStream",
+                "ec2messages:FailMessage",
+                "ssm:*",
+                "ssmmessages:OpenDataChannel",
+                "ec2messages:SendReply",
+                "logs:PutRetentionPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": [
+                "events:PutEvents",
+                "s3:PutObject",
+                "s3:GetObject",
+                "kms:Decrypt",
+                "s3:AbortMultipartUpload",
+                "s3:GetObjectVersion",
+                "kms:GenerateDataKey*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor6",
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor7",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DescribeAssociation",
+                "ssm:ListInstanceAssociations",
+                "ssm:PutComplianceItems",
+                "ssm:UpdateInstanceAssociationStatus",
+                "ssm:UpdateAssociationStatus"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor8",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DescribeAssociation",
+                "ssm:DescribeDocument",
+                "ssm:GetDocument",
+                "ssm:UpdateAssociationStatus"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor9",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParameters",
+                "ssm:GetParameter"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor10",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DescribeAssociation",
+                "ssm:UpdateInstanceAssociationStatus"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
